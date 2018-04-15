@@ -33,6 +33,8 @@ if install_programs; then
 		brew cask install $cask
 	done
 fi
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
 
 cd $dotfiles_dir
 
