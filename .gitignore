@@ -1,0 +1,12 @@
+..bash_profile.un~
+..tmux.conf.un~
+..vimrc.un~
+.DS_Store
+.bash_profile-anaconda3.bak
+.bash_sessions/
+.fzf.bash
+.fzf.zsh
+.fzf/
+.setup.sh.un~
+.viminfo
+..gitignore.un~
