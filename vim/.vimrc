@@ -55,6 +55,7 @@ set wildmode=list:longest
 set ttyfast
 "set backspace=indent,eol,start
 set undofile
+set undodir=~/.undofiles
 "set clipboard=unnamed
 
 " LEADER LINES
