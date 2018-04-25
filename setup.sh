@@ -1,12 +1,18 @@
 #!/bin/bash 
 
+
+#maek all my files go into .symlinks and then take each of those it finds and drop the symlink bit and put a dot infront
+# put plugins from vim in another file
+
+
+
 dir=~/
 dotfiles_dir=$( pwd )
 old_dir=~/.old_dots
 dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshconf')
 install_programs=True
 
-brew_install_list=('ctags' 'git' 'macvim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
+brew_install_list=('ctags' 'git' 'macvim --override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
 brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr')
 
 #git checkout tings
@@ -34,6 +40,9 @@ if install_programs; then
 	done
 fi
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+#install vim plugins for me
+echo -ne '\n' | vim -c 'PlugInstall' -c 'qa!'
 
 
 cd $dotfiles_dir

@@ -1,16 +1,3 @@
-vim davebinary.py 
-vim dotfiles/.vimrc 
-vim davebinary.py 
-vim dotfiles/.vimrc 
-vim davebinary.py 
-ll .vim
-ll .vim/plugged/
-vim davebinary.py 
-vim davebinary.py 
-vim .vimrc
-vim davebinary.py 
-vim .vimrc
-vim davebinary.py 
 vim .vimrc
 vim .vimrc
 vim .config/flake8
@@ -498,3 +485,16 @@ ls
 pwd
 zsh
 zsh
+vim ~/.vimrc
+tmux create -n WADDAMS
+tmux create -t WADDAMS
+tmux -c
+tmux 
+ls
+tmuxa
+tmux ls
+man tmux
+tmux new-session BIGBOY
+tmux new-session BIGBOY
+tmux new-session BIGBOY
+tmux new-session BIGBOY
