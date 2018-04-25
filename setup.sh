@@ -15,6 +15,8 @@ install_programs=True
 brew_install_list=('ctags' 'git' 'macvim --override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
 brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr')
 
+mkdir ~/.undofiles
+
 #git checkout tings
 if [ -d $old_dir ]; then 
 	mkdir $old_dir
