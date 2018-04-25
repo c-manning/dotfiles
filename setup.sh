@@ -16,6 +16,7 @@ brew_install_list=('ctags' 'git' 'macvim --override-system-vim' 'docker' 'cmake'
 brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr')
 
 mkdir ~/.undofiles
+chsh -s /bin/zsh
 
 #git checkout tings
 if [ -d $old_dir ]; then 
