@@ -17,6 +17,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"get rid of bloody Ex mode
+nnoremap Q <nop>
+
 set colorcolumn=120
 
 " Enable folding
@@ -46,7 +49,6 @@ syntax on
 set hlsearch
 set incsearch
 set showmatch
-set encoding=utf-8
 set scrolloff=3
 set showmode
 set hidden
@@ -55,6 +57,8 @@ set wildmode=list:longest
 set ttyfast
 "set backspace=indent,eol,start
 set undofile
+set history=100
+set undolevels=100
 set undodir=~/.undofiles
 "set clipboard=unnamed
 
@@ -65,14 +69,15 @@ let mapleader = ","
 "map <leader>f :Files<cr>
 "map <C-p> :Files<cr>
 "map <leader>h :Find<cr>
+nnoremap <leader>g :GundoToggle<CR>
 
 
 "Plugin configurations:
 	" Set NERDTree to open with Ctrl + n
 	map <C-n> :NERDTreeToggle %<CR>
 	"YouCompleteMe
-	map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-	let g:ycm_autoclose_preview_window_after_completion=1
+	"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+	"let g:ycm_autoclose_preview_window_after_completion=1
 	" Configuration for Fuzzy File Finder to use RipGrep
 	command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 	" Allow fzf to work in interactive move with ctrl+z ctrl+x
@@ -85,11 +90,13 @@ hi Normal ctermbg=black
 "set t_Co=256
 "set background=black
 
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 
-let g:solarized_termcolors=256
+
 let g:syntastic_check_on_wq = 1
 let g:syntastic_check_on_open = 0
-let g:solarized_termtrans=1
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_flake8_max_line_length="120"
 let g:flake8_max_line_length=120
@@ -100,3 +107,8 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 "set listchars=eol:¬,tab:▷\ ,
+let g:WebDevIconsConcealNerdTreeBrackets = 1
+let g:WebDevIcons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:webdevicons_enable_ctrlp = 1
+set encoding=UTF-8

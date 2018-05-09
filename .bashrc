@@ -9,6 +9,7 @@ eval $(thefuck --alias)
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+EDITOR="vim"
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

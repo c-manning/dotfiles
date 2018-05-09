@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 
-#maek all my files go into .symlinks and then take each of those it finds and drop the symlink bit and put a dot infront
+#make all my files go into .symlinks and then take each of those it finds and drop the symlink bit and put a dot infront
 # put plugins from vim in another file
 
 
@@ -12,11 +12,10 @@ old_dir=~/.old_dots
 dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshconf')
 install_programs=True
 
-brew_install_list=('ctags' 'git' 'macvim --override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
-brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr')
+brew_install_list=('ctags' 'zsh' 'mas' 'diff-so-fancy' 'git' 'macvim --override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
+brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font')
 
 mkdir ~/.undofiles
-chsh -s /bin/zsh
 
 #git checkout tings
 if [ -d $old_dir ]; then 
@@ -35,6 +34,7 @@ done
 
 if install_programs; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew tap caskroom/fonts
 	for brew in "${brew_install_list[@]}"; do
 		brew install $brew
 	done
@@ -46,7 +46,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 
 #install vim plugins for me
 echo -ne '\n' | vim -c 'PlugInstall' -c 'qa!'
+chsh -s /bin/zsh
 
+sh $dir/dotfiles/scripts/mas.sh
 
-cd $dotfiles_dir
 
