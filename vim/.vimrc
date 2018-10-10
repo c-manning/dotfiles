@@ -24,7 +24,7 @@ set colorcolumn=120
 
 " Enable folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevel=10
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -48,16 +48,17 @@ set cursorline
 syntax on
 set hlsearch
 set incsearch
-set showmatch
+set showmatch           " highlight matching [{()}]
 set scrolloff=3
 set showmode
 set hidden
+set lazyredraw          " redraw only when we need to.
 set wildmenu
 set wildmode=list:longest
 set ttyfast
 "set backspace=indent,eol,start
 set undofile
-set history=100
+set history=10000
 set undolevels=100
 set undodir=~/.undofiles
 "set clipboard=unnamed
@@ -81,11 +82,11 @@ nnoremap <leader>g :GundoToggle<CR>
 	" Configuration for Fuzzy File Finder to use RipGrep
 	command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 	" Allow fzf to work in interactive move with ctrl+z ctrl+x
-	imap <c-z><c-x> <plug>(fzf-complete-line)
+	imap <c-t> <plug>(fzf-complete-line)
 
 
 "VISUALS
-colorscheme molokai 
+colorscheme badwolf 
 hi Normal ctermbg=black
 "set t_Co=256
 "set background=black

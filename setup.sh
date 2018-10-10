@@ -12,7 +12,7 @@ old_dir=~/.old_dots
 dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshconf')
 install_programs=True
 
-brew_install_list=('ctags' 'zsh' 'mas' 'diff-so-fancy' 'git' 'macvim --override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
+brew_install_list=('ctags' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
 brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font')
 
 mkdir ~/.undofiles
@@ -22,11 +22,21 @@ if [ -d $old_dir ]; then
 	mkdir $old_dir
 fi
 
+cd "$HOME/dotfiles/tmux"
+git clone https://github.com/powerline/fonts
+cd "powerline/fonts"
+chmod +x install.sh
+./install.sh
+pip install flake8
+mkdir -p ~/.config/
+echo "[flake8]" >> ~/.config/flake8
+echo "max-line-length = 120" >> ~/.config/flake8
 cd $dir
 
 for dotfile in "${dotfile_list[@]}"; do
 	mv $dir/$dotfile $old_dir/
-	ln -s $dotfiles_dir/$dotfile $dir
+	echo "source $dotfiles_dir/$dotfile" > ~/$dotfile
+	#ln -s $dotfiles_dir/$dotfile $dir
 done	
 
 

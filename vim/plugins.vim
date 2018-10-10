@@ -1,12 +1,21 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
 call plug#begin('~/.vim/plugged')
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/vim-peekaboo'
+Plug 'plasticboy/vim-markdown'
+"Plug 'powerline/powerline'
 Plug 'wellle/targets.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'sjl/gundo.vim'
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/indentpython.vim'
 "Plug 'dbsr/vimpy'
