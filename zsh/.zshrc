@@ -31,6 +31,7 @@ LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 alias diff="diff-so-fancy"
 alias svs="git status"
 alias man="tldr"
+alias mux="tmuxinator"
 alias top='htop'
 alias ping='prettyping --nolegend'
 alias ll='ls -ltarh'

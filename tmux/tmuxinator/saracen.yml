@@ -1,0 +1,32 @@
+# ~/dotfile/tmux/tmuxinator/saracen.yml
+
+name: saracen
+root: ~/
+
+
+# Project hooks
+
+# Runs on project start, always
+#on_project_start: command
+# on_project_first_start: command
+# on_project_restart: command
+# on_project_exit: command
+# on_project_stop: command
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+              - vim:
+                      cd ~/Documents/workspace/SaracenCareAndRepair/; git pull; vim
+              #- build:
+                      #chrome "http://localhost:8080/SaracenCareAndRepair/index";
+                      #load tomcat here;
+  - server: 
+      layout: main-vertical
+      panes:
+              - ssh:
+                      saracen=`nslookup www.saracencareandrepair.co.uk | grep Address | grep -v "#53" | cut -f2 -d' '`; ssh root@$saracen

@@ -25,6 +25,7 @@ fi
 cd "$HOME/dotfiles/tmux"
 git clone https://github.com/powerline/fonts
 cd "powerline/fonts"
+gem install tmuxinator
 chmod +x install.sh
 ./install.sh
 pip install flake8
@@ -40,7 +41,7 @@ for dotfile in "${dotfile_list[@]}"; do
 done	
 
 ln -s $dotfiles_dir/config/.config $dir/.config
-
+ln -s $dotfiles_dir/tmux/tmuxinator/ $dir/.config/tmuxinator
 
 #somehow I changed my default vim to be macvim, need this in here too
 

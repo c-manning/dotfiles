@@ -4,7 +4,8 @@ IP=$(ipconfig getifaddr en0)
 PUB_IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 #INTERNET=''
-INTERNET='📶'
+#INTERNET='📶'
+INTERNET='📡'
 
 internet_info=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep CtlRSSI | sed -e 's/^.*://g' | sed 's/-//g' | tr -d " ")
 

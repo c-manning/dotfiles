@@ -1,0 +1,27 @@
+# ~/dotfile/tmux/tmuxinator/dev-workflow.yml
+
+name: dev-workflow
+root: ~/
+
+
+# Project hooks
+
+# Runs on project start, always
+#on_project_start: command
+# on_project_first_start: command
+# on_project_restart: command
+# on_project_exit: command
+# on_project_stop: command
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+              - vim:
+                      vim
+              - zsh:
+                      echo "hello"
+  - logs: tail -f /var/log/system.log
