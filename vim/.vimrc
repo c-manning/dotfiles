@@ -1,51 +1,30 @@
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IMPORTS
+let mapleader = ","
 source ~/dotfiles/vim/plugins.vim
+source ~/dotfiles/vim/plugin-config.vim
+source ~/dotfiles/vim/keymap.vim
 
-set wildignore=*.pyc
-set textwidth=0 
-set wrapmargin=0
-"split navigations
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-nnoremap j gj
-nnoremap k gk
-"navigate by display lines not physical lines using hjkl
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" let vim know where my config files are
+set runtimepath+=~/dotfiles/vim/
 
-"get rid of bloody Ex mode
-nnoremap Q <nop>
 
-set colorcolumn=120
-
-" Enable folding
+" SYSTEM SETTINGS
 set foldmethod=indent
 set foldlevel=10
-" Enable folding with the spacebar
-nnoremap <space> za
-
-"map ctrl+l to clear the search highlighting
-nnoremap <C-L> :nohlsearch<CR><C-L>
-
 " Turn off all shit vim does to work like vi
 set nocompatible
-set number
-set relativenumber
 " Allows scrolling with trackpad in vim using mouseterm
 set mouse=a
 " Display the cursor position on the last line of the screen or in the status line of a window
 set ruler
-"Gets rid of annoying noise, makes curser flash instead
-set visualbell
 set showcmd
 set ignorecase
+set wildignore=*.pyc
+set textwidth=0 
+set wrapmargin=0
 set smartcase
 set cursorline
-syntax on
 set hlsearch
 set incsearch
 set showmatch           " highlight matching [{()}]
@@ -53,63 +32,23 @@ set scrolloff=3
 set showmode
 set hidden
 set lazyredraw          " redraw only when we need to.
+set encoding=UTF-8
 set wildmenu
 set wildmode=list:longest
 set ttyfast
-"set backspace=indent,eol,start
 set undofile
 set history=10000
-set undolevels=100
+set undolevels=10000
 set undodir=~/.undofiles
-"set clipboard=unnamed
-
-" LEADER LINES
-let mapleader = ","
-"nnoremap <leader>w <C-w>v<C-w>l
-"leader and lb does fuzzy search of buffers, ctrl+t then opens in new tab
-"map <leader>f :Files<cr>
-"map <C-p> :Files<cr>
-"map <leader>h :Find<cr>
-nnoremap <leader>g :GundoToggle<CR>
 
 
-"Plugin configurations:
-	" Set NERDTree to open with Ctrl + n
-	map <C-n> :NERDTreeToggle %<CR>
-	"YouCompleteMe
-	"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-	"let g:ycm_autoclose_preview_window_after_completion=1
-	" Configuration for Fuzzy File Finder to use RipGrep
-	command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-	" Allow fzf to work in interactive move with ctrl+z ctrl+x
-	imap <c-t> <plug>(fzf-complete-line)
-
-
-"VISUALS
+" VISUALS
 colorscheme badwolf 
+syntax on
 hi Normal ctermbg=black
-"set t_Co=256
-"set background=black
+set colorcolumn=120
+set visualbell
+" Turn on my numbers and relative numbers
+set number
+set relativenumber
 
-if has('python3')
-    let g:gundo_prefer_python3 = 1
-endif
-
-
-let g:syntastic_check_on_wq = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_flake8_max_line_length="120"
-let g:flake8_max_line_length=120
-let g:syntastic_python_checkers = ["flake8"]
-let g:airline#extensions#ale#enabled = 1
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-"set listchars=eol:¬,tab:▷\ ,
-let g:WebDevIconsConcealNerdTreeBrackets = 1
-let g:WebDevIcons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:webdevicons_enable_ctrlp = 1
-set encoding=UTF-8

@@ -9,10 +9,10 @@
 dir=~/
 dotfiles_dir=$( pwd )
 old_dir=~/.old_dots
-dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshconf')
+dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshrc' 'zsh/.profile')
 install_programs=True
 
-brew_install_list=('ctags' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
+brew_install_list=('ctags' 'shpotify' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
 brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font')
 
 mkdir ~/.undofiles
@@ -35,9 +35,11 @@ cd $dir
 
 for dotfile in "${dotfile_list[@]}"; do
 	mv $dir/$dotfile $old_dir/
-	echo "source $dotfiles_dir/$dotfile" > ~/$dotfile
-	#ln -s $dotfiles_dir/$dotfile $dir
+	#echo "source $dotfiles_dir/$dotfile" > ~/$dotfile
+	ln -s $dotfiles_dir/$dotfile $dir
 done	
+
+ln -s $dotfiles_dir/config/.config $dir/.config
 
 
 #somehow I changed my default vim to be macvim, need this in here too
