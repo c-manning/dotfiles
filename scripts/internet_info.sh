@@ -21,6 +21,7 @@ else
     echo -n '#[fg=colour120]'
 fi
 
-echo -n "$INTERNET-[$internet_info] #[fg=colour197]$IP | $PUB_IP"
+#echo -n "$INTERNET[$internet_info] #[fg=colour197]$IP | $PUB_IP"
+echo -n "$INTERNET[$internet_info] #[fg=colour197]$PUB_IP"
 
 

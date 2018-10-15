@@ -39,4 +39,5 @@ alias ls='ls -ah'
 alias vim='mvim -v' 
 
 eval $(thefuck --alias)
+source ~/dotfiles/zsh/prompt.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

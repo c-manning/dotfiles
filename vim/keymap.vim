@@ -1,5 +1,5 @@
+"
 " NAVIGATION
-
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
