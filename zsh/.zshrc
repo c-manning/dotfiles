@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # Adding color
 alias ls='gls -hA --color=auto --group-directories-first'
 alias grep="grep --color=auto" # Color grep - highlight desired sequence.
-LS_COLORS=$LS_COLORS:'di=0;21:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;33:' ; export LS_COLORS
 
 # set aliases
 alias diff="diff-so-fancy"
