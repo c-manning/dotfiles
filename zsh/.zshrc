@@ -23,19 +23,19 @@ source $ZSH/oh-my-zsh.sh
 #ZSH_TMUX_AUTOSTART='true'
 
 # Adding color
-alias ls='ls -hN --color=auto --group-directories-first'
+alias ls='gls -hA --color=auto --group-directories-first'
 alias grep="grep --color=auto" # Color grep - highlight desired sequence.
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;21:' ; export LS_COLORS
 
 # set aliases
 alias diff="diff-so-fancy"
-alias svs="git status"
+alias gits="git status"
 alias man="tldr"
 alias mux="tmuxinator"
 alias top='htop'
 alias ping='prettyping --nolegend'
 alias ll='ls -ltarh'
-alias ls='ls -ah'
+#alias ls='ls -ah'
 alias vim='mvim -v' 
 
 eval $(thefuck --alias)
