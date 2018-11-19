@@ -13,6 +13,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
+" Surround word with quote
+map <Leader>' ysiw'
+map <Leader>" ysiw"
+
+
 " Enable folding with the spacebar
 nnoremap <space> za
 

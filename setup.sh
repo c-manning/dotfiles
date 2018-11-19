@@ -12,8 +12,8 @@ old_dir=~/.old_dots
 dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshrc' 'zsh/.profile')
 install_programs=True
 
-brew_install_list=('ctags' 'shpotify' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget')
-brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font')
+brew_install_list=('ctags' 'shpotify' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget', 'mosh')
+brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font', 'ngrok')
 
 mkdir ~/.undofiles
 
