@@ -16,7 +16,7 @@ bindkey -e
 # Path to your oh-my-zsh installation.
 export ZSH=~/dotfiles/zsh/ohmyzsh/
 ZSH_THEME="cypher"
-plugins=(zsh-autosuggestions autojump tmux tmuxinator dirhistory python vi git)
+plugins=(zsh-autosuggestions tmux tmuxinator dirhistory python vi git)
 source $ZSH/oh-my-zsh.sh
 
 # zsh tmux settings, make tmux autostart on load of iterm
