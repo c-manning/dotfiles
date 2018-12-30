@@ -20,11 +20,13 @@ set runtimepath+=~/dotfiles/vim/
 	" Allows scrolling with trackpad in vim using mouseterm
 	set mouse=a
 	" Display the cursor position on the last line of the screen or in the status line of a window
+	" this shows the line endings of the file, set nolist will turn it off
+	set list
 	set ruler
 	set showcmd
 	set ignorecase
 	set wildignore=*.pyc
-	set textwidth=0 
+	set textwidth=0
 	set wrapmargin=0
 	set smartcase
 	set cursorline
@@ -46,8 +48,25 @@ set runtimepath+=~/dotfiles/vim/
 " }
 
 
+"PYTHON SETTINGS {
+	"set some python specific tab settings
+	filetype indent on
+	autocmd Filetype python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+	"also set the defaults to be more normal
+	set shiftwidth=4
+	set tabstop=4
+	set softtabstop=4
+"}
+
+"AUTOCORRECT DICTIONARY{
+	abbr ture true
+	abbr flase false
+"}	
+
 " VISUALS {
-	colorscheme badwolf 
+	"change the tab char and newline char to unicode symbols
+	set listchars=tab:►\ ,eol:↲,trail:·
+	colorscheme badwolf
 	syntax on
 	hi Normal ctermbg=black
 	set colorcolumn=120
@@ -56,7 +75,6 @@ set runtimepath+=~/dotfiles/vim/
 	set number
 	set relativenumber
 " }
-
 " Return to the same line you left off at
 	augroup line_return
 		au!

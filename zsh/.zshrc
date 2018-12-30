@@ -35,6 +35,7 @@ alias mux="tmuxinator"
 alias top='htop'
 alias ping='prettyping --nolegend'
 alias ll='ls -ltarh'
+alias gis='git status'
 #alias ls='ls -ah'
 alias vim='mvim -v' 
 
