@@ -11,12 +11,17 @@ map <c-p> :Files<cr>
 " Configuration for Fuzzy File Finder to use RipGrep
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
+"Jedi vim
+"let g:jedi#completions_command = "<C-n>"
 
 " GUNDO
 if has('python3')
     let g:gundo_prefer_python3 = 1
 endif
 nnoremap <leader>g :GundoToggle<CR>
+
+" notes editor plugin
+let g:nv_search_paths = ['~/wiki', '~/notes', '~/code', 'docs.md' , './notes.md']
 
 " SYNTASTIC
 let g:syntastic_check_on_wq = 1
@@ -25,6 +30,7 @@ let g:syntastic_error_symbol = '❌'
 let g:syntastic_flake8_max_line_length="120"
 let g:flake8_max_line_length=120
 let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_javascript_checkers = ['eslint']
 let g:airline#extensions#ale#enabled = 1
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
