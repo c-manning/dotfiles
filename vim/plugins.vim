@@ -12,14 +12,20 @@ Plug 'derekwyatt/vim-scala'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tpope/vim-repeat' 
+Plug 'portante/pycscope'
 Plug 'tpope/vim-surround'  
 Plug 'tpope/vim-fugitive' "A all in one git plugin :GStatus for git status :GCommit etc
 Plug 'koalaman/shellcheck' "Allows bash script syntax checks
+Plug 'davidhalter/jedi-vim'
+"Plug 'tell-k/vim-autopep8' "usage is :Autopep8
 Plug 'tmhedberg/SimpylFold'
+Plug 'alok/notational-fzf-vim'
 Plug 'vim-syntastic/syntastic' "Performs syntax highlighting in vim -
 Plug 'scrooloose/nerdtree' "Gives me a nice file browser :NERDTree to bring up
 Plug 'scrooloose/nerdcommenter' "Allows simple commenting with <leader>c<space>
 Plug 'brodie/mouseterm' "This allows me to scroll in vim
+Plug 'pangloss/vim-javascript'  " add some javascript syntax highlighting
+Plug 'mattn/emmet-vim' " add ability to do snippets
 
 " OLD
 " Plug 'Shougo/denite.nvim'
