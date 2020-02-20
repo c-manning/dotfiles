@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
 Plug 'junegunn/vim-peekaboo'
 Plug 'sjl/gundo.vim'
+Plug 'derekwyatt/vim-scala'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tpope/vim-repeat' 
