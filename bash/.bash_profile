@@ -10,7 +10,7 @@ eval $(thefuck --alias)
 # added by Anaconda3 4.4.0 installer
 export PATH="/Users/ccmanni/anaconda3/bin:$PATH"
 
-
+alias python='/usr/local/bin/python3'
 # Switch escape and caps and use wal colors if tty:
 #sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 #wal -Rn
