@@ -1,2 +1,7 @@
 *.swp
+config/.config/Wondershare/
+config/.config/configstore/
+config/.config/gtk-2.0/
+config/.config/joplin-desktop/
+config/.config/joplin/
 *.swo
