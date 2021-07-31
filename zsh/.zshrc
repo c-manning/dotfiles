@@ -37,7 +37,7 @@ alias ping='prettyping --nolegend'
 alias ll='ls -ltarh'
 alias gis='git status'
 #alias ls='ls -ah'
-alias vim='mvim -v' 
+#alias vim='mvim -v' 
 
 eval $(thefuck --alias)
 source ~/dotfiles/zsh/prompt.sh

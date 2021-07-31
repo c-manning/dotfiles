@@ -17,6 +17,8 @@ alias ll='ls -ltarh'
 alias ls='ls -ah'
 alias vim='mvim -v' 
 
+source "$(navi widget zsh)"
+source "$(navi widget bash)"
 #bind -x '"\C-p": vim $(fzf);'
 
 

@@ -9,9 +9,9 @@ mas signin --dialog "$appleid"
   
 apps=(
 	"Magnet:441258766"
+	"907364780" #install pomodoro one 
 	"Zee3:"
 	"Coca:1000808993"
-	"Fantastical 2:975937182"
 )
 
 for app in "${apps[@]}"; do

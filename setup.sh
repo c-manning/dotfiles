@@ -12,8 +12,8 @@ old_dir=~/.old_dots
 dotfile_list=('vim/.vimrc' 'tmux/.tmux.conf' 'bash/.bashrc' 'bash/.bash_profile' 'zsh/.zshrc' 'zsh/.profile')
 install_programs=True
 
-brew_install_list=('ctags' 'shpotify' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget', 'mycli', 'mosh')
-brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font', 'ngrok')
+brew_install_list=('ctags' 'shpotify' 'zsh' 'mas' 'caskroom/cask/iterm2' 'diff-so-fancy' 'git' 'macvim --with-override-system-vim' 'docker' 'cmake' 'fish' 'fzf' 'jq' 'thefuck' 'shellcheck' 'ripgrep' 'ranger' 'tmux' 'htop' 'node' 'watchman' 'nethogs' 'openssl' 'ntfs-3g' 'wget', 'mycli', 'mosh', 'kubernetes-cli', 'lastpass-cli')
+brew_cask_install_list=('google-chrome' 'dropbox' 'keycastr' 'font-hack-nerd-font', 'ngrok', 'tyke', 'simplenote', 'flux')
 
 mkdir ~/.undofiles
 
@@ -47,6 +47,8 @@ ln -s $dotfiles_dir/tmux/tmuxinator/ $dir/.config/tmuxinator
 
 if install_programs; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew tap caskroom/cask
+	brew tap caskroom/versions
 	brew tap caskroom/fonts
 	for brew in "${brew_install_list[@]}"; do
 		brew install $brew
